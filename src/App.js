@@ -5,7 +5,7 @@ import 'react-toastify/dist/ReactToastify.css';
 function App() {
   return (
     <div className="App">
-      <h1>zilani</h1>
+      <h1 className='text-error'>zilani</h1>
       <ToastContainer/>
     </div>
   );
