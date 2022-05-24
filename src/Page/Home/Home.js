@@ -5,7 +5,7 @@ import Tools from './Tools';
 const Home = () => {
     return (
         <div>
-            welcomto home
+      
             <Banner></Banner>
             <Tools></Tools>
         </div>
