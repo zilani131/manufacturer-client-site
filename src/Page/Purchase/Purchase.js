@@ -162,8 +162,8 @@ const Purchase = () => {
                 <br />
 
                 <input
-                as={Link}
-                to="/payment"
+             
+           
                   type="submit"
                   value="Proceed to order"
                   class="btn btn-primary"
