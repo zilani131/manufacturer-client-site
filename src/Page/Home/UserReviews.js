@@ -8,7 +8,7 @@ const UserReviews = () => {
         isLoading,
         error,
         data: reviews,
-        refetch,
+       
       } = useQuery("tool", () =>
         fetch(`http://localhost:5000/reviews`).then((res) => res.json())
       );
@@ -16,9 +16,11 @@ const UserReviews = () => {
     {
         return <Loading></Loading>
     }
+    console.log(reviews)
     return (
         <div className='p-8'>
-            {reviews.map(re=><ReviewsCard key={re._id} re={re} refetch={refetch}></ReviewsCard>)}
+            {reviews.length && reviews?.map(re=><ReviewsCard key={re._id} re={re} ></ReviewsCard>)}
+            {/* reviews.length is set to stop the back error */}
         </div>
     );
 };

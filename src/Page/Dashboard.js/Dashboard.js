@@ -2,6 +2,16 @@ import React from 'react';
 import { Link, Outlet } from 'react-router-dom';
 
 const Dashboard = () => {
+  const userRoutes=<>
+   <li><Link to="/dashboard/myorder">My order</Link></li>
+         <li><Link to="/dashboard/review">Review</Link></li>
+  </>
+  const adminRoutes=<>
+    <li><Link to="/dashboard/addproduct">Add Product</Link></li>
+         <li><Link to="/dashboard/makeadmin">Make Admin</Link></li>
+         <li><Link to="/dashboard/manageallorders">Manage All Orders</Link></li>
+         <li><Link to="/dashboard/manageproducts">Manage Products</Link></li>
+  </>
     return (
         <div class="drawer drawer-mobile">
         <input id="dashboardDrawer" type="checkbox" class="drawer-toggle" />
@@ -17,8 +27,8 @@ const Dashboard = () => {
           <ul class="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content">
             {/* <!-- Sidebar content here --> */}
             <li><Link to="/dashboard">Profile</Link></li>
-            <li><Link to="/dashboard/myorder">My order</Link></li>
-         <li><Link to="/dashboard/review">Review</Link></li>
+           {userRoutes}
+           {adminRoutes}
           </ul>
         
         </div>

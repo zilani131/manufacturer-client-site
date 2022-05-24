@@ -5,7 +5,6 @@ import 'react-toastify/dist/ReactToastify.css';
 import Navbar from './Shared.js/Navbar';
 import { Route, Routes } from 'react-router-dom';
 import Home from './Page/Home/Home';
-
 import Purchase from './Page/Purchase/Purchase';
 import Login from './Page/Login';
 import Dashboard from './Page/Dashboard.js/Dashboard';
@@ -16,7 +15,10 @@ import Payment from './Page/Payment';
 import Profile from './Page/Dashboard.js/Profile';
 import MyOrder from './Page/Dashboard.js/User/MyOrder'
 import Review from './Page/Dashboard.js/User/Review'
-
+import AddProduct from './Page/Dashboard.js/Admin/AddProduct'
+import MakeAdmin from './Page/Dashboard.js/Admin/MakeAdmin'
+import ManageProducts from './Page/Dashboard.js/Admin/ManageProducts'
+import ManageAllOrders from './Page/Dashboard.js/Admin/ManageAllOrders'
 function App() {
   return (
     <div className="App">
@@ -33,10 +35,10 @@ function App() {
           <Route index element={<Profile></Profile>}></Route>
           <Route path='myorder' element={<MyOrder></MyOrder> }></Route>
           <Route path='review' element={<Review></Review>}></Route>
-          {/* <Route path='/addproduct' element={<Profile></Profile>}></Route>
-          <Route path='/makeadmin' element={<Profile></Profile>}></Route>
-          <Route path='/manageallorder' element={<Profile></Profile>}></Route>
-          <Route path='/manageproduct' element={<Profile></Profile>}></Route> */}
+          <Route path='addproduct' element={<AddProduct></AddProduct>}></Route>
+          <Route path='makeadmin' element={<MakeAdmin></MakeAdmin>}></Route>
+          <Route path='manageallorders' element={<ManageAllOrders></ManageAllOrders>}></Route>
+          <Route path='manageproducts' element={<ManageProducts></ManageProducts>}></Route>
          
 
           </Route> 

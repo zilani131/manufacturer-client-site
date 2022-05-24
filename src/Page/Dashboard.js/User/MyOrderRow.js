@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 const MyOrderRow = ({user,index,refetch}) => {
@@ -17,6 +18,7 @@ const MyOrderRow = ({user,index,refetch}) => {
              if(data?.deletedCount){
                  toast.success(`${productName} is deleted`)
              }
+            
           refetch()
          })
 
@@ -28,6 +30,7 @@ const MyOrderRow = ({user,index,refetch}) => {
         <td>{orderedNum}</td>
         <td>{status}</td>
         <td><button onClick={handleDelete} class="btn btn-error">Delete</button></td>
+        <td><Link to="/payment"  class="btn btn-error">Payment</Link></td>
       </tr>
       
     );

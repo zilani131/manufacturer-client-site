@@ -1,6 +1,6 @@
 import React from "react";
 
-const ReviewsCard = ({re,refetch}) => {
+const ReviewsCard = ({re}) => {
     const {userName,rating,review}=re;
   return (
     <div class="card w-96 bg-base-100 shadow-xl">
