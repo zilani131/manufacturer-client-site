@@ -9,7 +9,7 @@ const ToolCard = ({tool}) => {
         <div class="card-body text-white">
           <h2 class="card-title">{name}</h2>
           <p className='text-left'>{description}</p>
-          <p className='text-left'>Quantity:{quantity}</p>
+          {/* <p className='text-left'>Quantity:{quantity}</p> */}
           <p className='text-left'>Minimum Order:{minimumOrder}</p>
           <p className='text-left'>Price:{price}</p>
           <div class="card-actions justify-end">

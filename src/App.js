@@ -12,6 +12,7 @@ import Dashboard from './Page/Dashboard.js/Dashboard';
 import Blog from './Page/Blog';
 import Registration from './Page/Registration'
 import RequireAuth from './Page/RequireAuth';
+import Payment from './Page/Payment';
 
 function App() {
   return (
@@ -24,7 +25,8 @@ function App() {
         <Route path='/purchase/:_id' element={<RequireAuth><Purchase></Purchase></RequireAuth>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/registration' element={<Registration></Registration>}></Route>
-        <Route path='/dashboard' element={<Dashboard></Dashboard>}></Route> 
+        <Route path='/payment' element={<Payment></Payment>}></Route>
+        <Route path='/dashboard' element={<RequireAuth><Dashboard></Dashboard></RequireAuth>}></Route> 
         <Route path='/blog' element={<Blog></Blog>}></Route> 
         
         
