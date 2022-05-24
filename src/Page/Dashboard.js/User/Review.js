@@ -1,12 +1,31 @@
 import React from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../../firebase.init";
+import Loading from "../../../Utilities.js/Loading";
 
 const Review = () => {
+    const [user,loading,error]=useAuthState(auth);
+    if(loading){
+        return <Loading></Loading>
+    }
     const handleAdd=event=>{
         event.preventDefault();
         const rating=parseInt(event.target.star.value);
         const review=event.target.description.value;
-        const reviews={review,rating}
-        fetch('')
+        const userName=user.displayName;
+        const reviews={review,rating,userName}
+        fetch('http://localhost:5000/reviews',{
+            method:'POST',
+            headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(reviews),
+        })
+        .then(res=>res.json())
+        .then(data=>{
+            console.log(data);
+            event.target.reset();
+        })
     }
   return (
     <div>
