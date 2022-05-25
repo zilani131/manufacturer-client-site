@@ -52,7 +52,7 @@ const Purchase = () => {
           orderedNum: orderedQuantity,
           role: "user",
           totalAmount: totalAmount,
-          status: "pending"
+          status: "unpaid"
         };
         fetch(`http://localhost:5000/user?email=${user.email}`, {
           method: "POST",

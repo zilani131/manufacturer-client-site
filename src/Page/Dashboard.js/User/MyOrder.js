@@ -38,7 +38,7 @@ const MyOrder = () => {
             </tr>
           </thead>
           <tbody>
-            {users.map((user, index) => (
+            {users.length && users.map((user, index) => (
               <MyOrderRow
                 key={user._id}
                 refetch={refetch}
