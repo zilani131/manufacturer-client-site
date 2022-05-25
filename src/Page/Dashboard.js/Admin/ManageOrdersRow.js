@@ -4,7 +4,23 @@ const ManageOrdersRow = ({index,order,refetch}) => {
     const {_id,prodcutName,name,email,status,}=order;
     const handleShip=(event)=>{
         event.preventDefault();
-        
+        const newStatus={status:"shipped"}
+        fetch(`http://localhost:5000/order/${_id}`,{
+            method:"PUT",
+            headers: {
+               'Content-Type':'application/json',
+             },
+             body:JSON.stringify(newStatus)
+        })
+        .then(res=>{
+            console.log(res)
+            return res.json()
+        })
+        .then(data=>{
+            console.log(data)
+            refetch()
+        })
+         
     }
     return (
         <tr>
@@ -13,7 +29,7 @@ const ManageOrdersRow = ({index,order,refetch}) => {
         <td>{email}</td>
         <td>{prodcutName}</td>
         <td>{status}</td>
-        <td><button onClick={handleShip} class="btn btn-success">Shipping</button></td>
+        <td><button disabled={status==="unpaid"} onClick={handleShip} class="btn btn-success">Shipping</button></td>
 
       </tr>
     );
