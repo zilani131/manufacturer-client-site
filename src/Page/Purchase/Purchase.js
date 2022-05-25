@@ -27,7 +27,8 @@ const Purchase = () => {
   const handleItem = (event) => {
     event.preventDefault();
     const inputQ = event.target.quantity.value;
-    orderedQuantity = inputQ;
+    orderedQuantity = parseInt(inputQ);
+    console.log(orderedQuantity,price)
     totalAmount = orderedQuantity * price;
     if (inputQ < minimumOrder || inputQ > quantity) {
       event.target.reset();

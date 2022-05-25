@@ -1,7 +1,22 @@
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link, Outlet } from 'react-router-dom';
+import auth from '../../firebase.init';
+import useUserDetails from '../../Hooks/useUserDetails';
+import Loading from '../../Utilities.js/Loading';
 
 const Dashboard = () => {
+  const [user,error1,loading]=useAuthState(auth)
+  const {
+    isLoading,
+    error,
+    data: users,
+    refetch,
+  }=useUserDetails(user.email)
+  if(loading||isLoading){
+    return <Loading></Loading>
+  }
+  const role=users[0]?.role;
   const userRoutes=<>
    <li><Link to="/dashboard/myorder">My order</Link></li>
          <li><Link to="/dashboard/review">Review</Link></li>
@@ -16,7 +31,7 @@ const Dashboard = () => {
         <div class="drawer drawer-mobile">
         <input id="dashboardDrawer" type="checkbox" class="drawer-toggle" />
         <div class="drawer-content ">
-         <h2 className='text-3xl text-purple-700'>Welcome to Dashboard</h2>
+         <h2 className='text-3xl text-purple-700'>Welcome to Dashboard </h2>
          <Outlet /> 
          {/* outlet is the nested screen and show the content we want to show  in this frame by nested routes */}
          
@@ -27,8 +42,8 @@ const Dashboard = () => {
           <ul class="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content">
             {/* <!-- Sidebar content here --> */}
             <li><Link to="/dashboard">Profile</Link></li>
-           {userRoutes}
-           {adminRoutes}
+           {role==="user"?userRoutes:""}
+           {role==="admin"?adminRoutes:""}
           </ul>
         
         </div>

@@ -1,23 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { useQuery } from "react-query";
+
 import auth from "../../../firebase.init";
+import useUserDetails from "../../../Hooks/useUserDetails";
 import Loading from "../../../Utilities.js/Loading";
+
 import MyOrderRow from "./MyOrderRow";
 
 const MyOrder = () => {
-  const [user, loading, error1] = useAuthState(auth);
 
+  const [user, loading, error1] = useAuthState(auth);
   const {
     isLoading,
     error,
     data: users,
     refetch,
-  } = useQuery("tool", () =>
-    fetch(`http://localhost:5000/user?email=${user?.email}`).then((res) =>
-      res.json()
-    )
-  );
+  }=useUserDetails(user?.email)
+  // const {
+  //   isLoading,
+  //   error,
+  //   data: users,
+  //   refetch,
+  // } = useQuery("tool", () =>
+  //   fetch(`http://localhost:5000/user?email=${user?.email}`).then((res) =>
+  //     res.json()
+  //   )
+  // );
   if (loading || isLoading) {
     return <Loading></Loading>;
   }
@@ -40,6 +48,7 @@ const MyOrder = () => {
           <tbody>
             {users.length && users.map((user, index) => (
               <MyOrderRow
+            
                 key={user._id}
                 refetch={refetch}
                 index={index}
@@ -49,6 +58,7 @@ const MyOrder = () => {
           </tbody>
         </table>
       </div>
+      
     </div>
   );
 };

@@ -30,8 +30,9 @@ function App() {
         <Route path='/purchase/:_id' element={<RequireAuth><Purchase></Purchase></RequireAuth>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/registration' element={<Registration></Registration>}></Route>
-        <Route path='/payment' element={<Payment></Payment>}></Route>
+        
         <Route path='/dashboard' element={<RequireAuth><Dashboard></Dashboard></RequireAuth>}>
+            
           <Route index element={<Profile></Profile>}></Route>
           <Route path='myorder' element={<MyOrder></MyOrder> }></Route>
           <Route path='review' element={<Review></Review>}></Route>
@@ -39,9 +40,11 @@ function App() {
           <Route path='makeadmin' element={<MakeAdmin></MakeAdmin>}></Route>
           <Route path='manageallorders' element={<ManageAllOrders></ManageAllOrders>}></Route>
           <Route path='manageproducts' element={<ManageProducts></ManageProducts>}></Route>
-         
+          <Route path='payment/:id' element={<Payment></Payment>}></Route>
+          
 
           </Route> 
+          
         <Route path='/blog' element={<Blog></Blog>}></Route> 
         
         

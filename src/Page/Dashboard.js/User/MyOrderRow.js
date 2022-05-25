@@ -5,7 +5,7 @@ import { toast } from 'react-toastify';
 const MyOrderRow = ({user,index,refetch}) => {
      const {productName,_id,orderedNum,status}=user;
      const handleDelete=(event)=>{
-         event.preventDefault();
+        //  event.preventDefault();
          fetch(`http://localhost:5000/user/${_id}`,{
              method:"DELETE",
              headers: {
@@ -23,14 +23,16 @@ const MyOrderRow = ({user,index,refetch}) => {
          })
 
      }
+     
     return (
         <tr>
         <th>{index+1}</th>
         <td>{productName}</td>
         <td>{orderedNum}</td>
         <td>{status}</td>
-        <td><button onClick={handleDelete} class="btn btn-error">Delete</button></td>
-        <td><Link to="/payment"  class="btn btn-error">Payment</Link></td>
+        <td><button onClick={handleDelete} class="btn btn-error">Cancel</button></td>
+        <td> 
+            <Link to={`/dashboard/payment/${_id}`}  class="btn btn-error">Payment</Link></td>
       </tr>
       
     );
