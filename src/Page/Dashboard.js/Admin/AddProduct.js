@@ -26,7 +26,7 @@ const AddProduct = () => {
     }
     return (
         <div>
-        <form className='grid grid-cols-1 gap-1 justify-start w-1/2 mx-auto bg-slate-600 p-8 rounded-3xl' onSubmit={handleAddProduct}>
+        <form className='grid grid-cols-1 gap-1 justify-start w-1/2 mx-auto bg-slate-800 p-8 rounded-3xl' onSubmit={handleAddProduct}>
             <input className='input input-bordered' name="name" placeholder='product name' type="text" />
             <br />
             <input className='input input-bordered' name="img" type="text" placeholder='image link' />

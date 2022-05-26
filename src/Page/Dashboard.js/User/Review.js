@@ -29,7 +29,7 @@ const Review = () => {
     }
   return (
     <div>
-      <form onSubmit={handleAdd} className="grid grid-cols-1 w-2/4 bg-slate-500 p-5 rounded-md">
+      <form onSubmit={handleAdd} className="grid grid-cols-1 w-2/4 bg-slate-800 p-5 rounded-md">
         <input
           name="description"
           class="input input-bordered"

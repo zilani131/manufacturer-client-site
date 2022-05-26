@@ -90,8 +90,8 @@ const Purchase = () => {
   };
   return (
     <div>
-      purchase page {_id}
-      <h1>{tool?.name}</h1>
+    
+    
       <div class="hero min-h-screen ">
         <div class="hero-content flex-col lg:flex-row">
           <div class="text-center lg:text-left">
@@ -100,13 +100,13 @@ const Purchase = () => {
               <figure>
                 <img src={img} alt={name} />
               </figure>
-              <div class="card-body text-center lg:text-left">
+              <div class="card-body text-center lg:text-left my-4">
                 <h2 class="card-title">{name}</h2>
-                <p>{description}</p>
+                <p className="text-lg font-semibold">{description}</p>
                 <p>Minimum Order:{minimumOrder}</p>
                 <p>Quantity:{quantity}</p>
                 {/* <p>Price :{price}</p> */}
-                <form onSubmit={handleItem}>
+                <form className="my-2" onSubmit={handleItem}>
                   <input
                     name="quantity"
                     class="input input-bordered"
@@ -118,7 +118,7 @@ const Purchase = () => {
                   <input
                     type="submit"
                     value="Add to cart"
-                    class="btn btn-primary"
+                    class="btn btn-primary my-2"
                   />
                 </form>
               </div>

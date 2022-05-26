@@ -18,10 +18,13 @@ const UserReviews = () => {
     }
     console.log(reviews)
     return (
-        <div className='p-8'>
+       <div className='py-4'>
+           <h1 className='text-center'>User Reviews</h1>
+           <div className='p-8 grid grid-cols-1 lg:grid-cols-3 justify-items-center '>
             {reviews.length && reviews?.map(re=><ReviewsCard key={re._id} re={re} ></ReviewsCard>)}
             {/* reviews.length is set to stop the back error */}
         </div>
+       </div>
     );
 };
 

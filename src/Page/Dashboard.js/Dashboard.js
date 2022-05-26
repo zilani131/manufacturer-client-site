@@ -31,10 +31,10 @@ const Dashboard = () => {
         <div class="drawer drawer-mobile">
         <input id="dashboardDrawer" type="checkbox" class="drawer-toggle" />
         <div class="drawer-content ">
-         <h2 className='text-3xl text-purple-700'>Welcome to Dashboard </h2>
+         <h2 className='text-3xl text-slate-600 text-center underline my-4'>Dashboard</h2>
          <Outlet /> 
          {/* outlet is the nested screen and show the content we want to show  in this frame by nested routes */}
-         
+         <label for="dashboardDrawer" class="btn btn-primary drawer-button lg:hidden">Open drawer</label>
         
         </div> 
         <div class="drawer-side">

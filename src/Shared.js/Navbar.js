@@ -33,6 +33,9 @@ const Navbar = () => {
       <li>
         <Link to="/blog">Blog</Link>
       </li>
+      {user?<li className="my-1">
+      <span  className="whitespace-nowrap">{user.displayName}</span>
+      </li>:''}
     </>
   );
   return (

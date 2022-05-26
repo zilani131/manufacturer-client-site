@@ -19,6 +19,7 @@ import AddProduct from './Page/Dashboard.js/Admin/AddProduct'
 import MakeAdmin from './Page/Dashboard.js/Admin/MakeAdmin'
 import ManageProducts from './Page/Dashboard.js/Admin/ManageProducts'
 import ManageAllOrders from './Page/Dashboard.js/Admin/ManageAllOrders'
+import Footer from './Shared.js/Footer'
 function App() {
   return (
     <div className="App">
@@ -49,6 +50,7 @@ function App() {
         
         
       </Routes>
+      <Footer></Footer>
       <ToastContainer/>
     </div>
   );

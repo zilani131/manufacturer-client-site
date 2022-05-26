@@ -10,7 +10,7 @@ const ManageProducts = () => {
     }
     return (
         <div>
-          {tools.length}
+      
           <div class="overflow-x-auto w-full">
         <table class="table w-full">
           {/* <!-- head --> */}
@@ -18,6 +18,7 @@ const ManageProducts = () => {
             <tr>
               <th></th>
               <th>Product Name</th>
+              <th>Image</th>
               <th>Id</th>
               <th>Action</th>
              

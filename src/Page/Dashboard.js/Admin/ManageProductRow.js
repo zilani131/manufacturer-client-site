@@ -24,11 +24,12 @@ const ManageProductRow = ({ index, refetch, tool }) => {
   return (
     <tr>
       <th>{index + 1}</th>
-      <td className="flex flex-row items-center gap-1">
-        <div>{name}</div>
-        <div class="w-16 rounded-sm">
-          <img src={img} alt={name} />
-        </div>
+      <td>
+        {name}
+        
+      </td>
+      <td>
+          <img className="w-16" src={img} alt={name} />
       </td>
       <td>{_id}</td>
 

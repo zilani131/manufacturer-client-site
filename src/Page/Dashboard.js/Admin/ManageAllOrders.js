@@ -20,7 +20,7 @@ const ManageOrders = () => {
   }
     return (
         <div>
-            <h1>{orders.length}</h1>
+       
          <div class="overflow-x-auto w-full">
         <table class="table w-full">
           {/* <!-- head --> */}
