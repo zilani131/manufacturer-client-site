@@ -3,6 +3,8 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link, Outlet } from 'react-router-dom';
 import auth from '../../firebase.init';
 import useUserDetails from '../../Hooks/useUserDetails';
+import useUserOrders from '../../Hooks/useUserOrders';
+
 import Loading from '../../Utilities.js/Loading';
 
 const Dashboard = () => {
@@ -16,7 +18,8 @@ const Dashboard = () => {
   if(loading||isLoading){
     return <Loading></Loading>
   }
-  const role=users[0]?.role;
+  const role=users?.role;
+  console.log(role)
   const userRoutes=<>
    <li><Link to="/dashboard/myorder">My order</Link></li>
          <li><Link to="/dashboard/review">Review</Link></li>
@@ -42,7 +45,7 @@ const Dashboard = () => {
           <ul class="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content">
             {/* <!-- Sidebar content here --> */}
             <li><Link to="/dashboard">Profile</Link></li>
-           {role==="user"?userRoutes:""}
+           {role!=="admin"?userRoutes:""}
            {role==="admin"?adminRoutes:""}
           </ul>
         

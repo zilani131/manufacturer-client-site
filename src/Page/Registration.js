@@ -7,9 +7,10 @@ import {
   useSignInWithGoogle,
   useUpdateProfile,
 } from "react-firebase-hooks/auth";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import auth from "../firebase.init";
+import useToken from "../Hooks/useToken";
 import Loading from "../Utilities.js/Loading";
 
 
@@ -21,7 +22,7 @@ const Registration = () => {
 // update name
 const [updateProfile, uloading, uerror] = useUpdateProfile(auth);
  // useToken
-
+ const [token]=useToken(user||guser)
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -68,9 +69,11 @@ if(uloading||gloading||cloading)
 }
 // After login to navigate
 // if(user){
-//     return <Navigate to="/"></Navigate>
+//    
 //   }
-
+if(user||guser){
+  return <Navigate to="/"></Navigate>
+}
   return (
     <div>
       <div className=" flex h-screen justify-center items-center">

@@ -3,20 +3,20 @@ import { useQuery } from 'react-query';
 
 const useUserDetails = (email) => {
     const {
-        isLoading,
-        error,
+        isLoading1,
+        error1,
         data: users,
-        refetch,
-      } = useQuery("tool", () =>
-        fetch(`http://localhost:5000/user?email=${email}`).then((res) =>
+        refetch1,
+      } = useQuery("details", () =>
+        fetch(`http://localhost:5000/userdetails?email=${email}`).then((res) =>
           res.json()
         )
       );
     return  {
-        isLoading,
-        error,
+        isLoading1,
+        error1,
         data: users,
-        refetch,
+        refetch1,
       } 
 };
 

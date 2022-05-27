@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 
 import auth from "../../../firebase.init";
-import useUserDetails from "../../../Hooks/useUserDetails";
+
+import useUserOrders from "../../../Hooks/useUserOrders";
 import Loading from "../../../Utilities.js/Loading";
 
 import MyOrderRow from "./MyOrderRow";
@@ -15,7 +16,7 @@ const MyOrder = () => {
     error,
     data: users,
     refetch,
-  }=useUserDetails(user?.email)
+  }=useUserOrders(user?.email)
   // const {
   //   isLoading,
   //   error,
