@@ -10,7 +10,7 @@ const UpcomingProduct = () => {
     return (
       
         <div className='my-4 mx-10'>
-            <h1 className='text-center text-4xl underline text-primary font-bold my-4'>Upcoming Product</h1>
+            <h1 className='text-center text-3xl underline text-slate-700 font-semibold italic my-4'>Upcoming Product</h1>
               <div className='grid grid-cols-1 lg:grid-cols-3 gap-1'>
           {  products.map((product)=>(<ProductCard key={product.id} product={product}></ProductCard>))}
         </div>

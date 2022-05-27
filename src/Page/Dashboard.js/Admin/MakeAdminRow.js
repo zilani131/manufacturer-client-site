@@ -1,10 +1,17 @@
 import React from 'react';
+import useUserDetails from '../../../Hooks/useUserDetails';
 
 const MakeAdminRow = ({index,refetch,user}) => {
     const {name,email,role}=user;
+    // const {
+    //   isLoading1,
+    //   error1,
+    //   data: users,
+    //   refetch1,
+    // }=useUserDetails(email)
     const handleAdmin=event=>{
         event.preventDefault();
-        const data={role:"admin"};
+        const data={role:"Admin"};
           fetch(`http://localhost:5000/alluser?email=${email}`,{
             method: "PUT",
             headers: {
@@ -25,7 +32,7 @@ const MakeAdminRow = ({index,refetch,user}) => {
         <th>{index+1}</th>
         <td>{name}</td>
         <td>{email}</td>
-        <td>{role}</td>
+       { role!=="Admin"?<td>User</td>:<td>{role}</td>}
         <td><button onClick={handleAdmin} class="btn btn-success">Make Admin</button></td>
 
       </tr>

@@ -31,7 +31,7 @@ const AddProduct = () => {
             <br />
             <input className='input input-bordered' name="img" type="text" placeholder='image link' />
             <br />
-            <input className='input input-bordered' name="description" placeholder='description' type="text" />
+            <textarea className='textarea textarea-bordered' name="description" placeholder='description' type="text" />
             <br />
             <input className='input input-bordered' type="number" placeholder='quantity' name="quantity" />
             <br />

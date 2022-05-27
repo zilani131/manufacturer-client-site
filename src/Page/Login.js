@@ -4,6 +4,7 @@ import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWith
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../firebase.init';
+import useToken from '../Hooks/useToken';
 import Loading from '../Utilities.js/Loading';
 
 const Login = () => {
@@ -17,6 +18,7 @@ const Login = () => {
     const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
   const [signInWithGoogle, guser, gloading, gerror] = useSignInWithGoogle(auth);
+  const [token]=useToken(guser)
     const handleSubmit=async (event)=>{
         event.preventDefault();
         const email=event.target.email.value;

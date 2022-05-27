@@ -8,11 +8,20 @@ import useUserDetails from "../Hooks/useUserDetails";
 
 const Navbar = () => {
   const [user, loading, error] = useAuthState(auth);
-
+  const {
+    isLoading1,
+    error1,
+    data: users,
+    refetch1,
+  }=useUserDetails(user?.email)
   if (loading) {
     return <Loading></Loading>;
   }
-
+ const handleSignOut=event=>{
+   event.preventDefault()
+   signOut(auth)
+   refetch1()
+ }
   const title = (
     <>
       <li>
@@ -25,12 +34,12 @@ const Navbar = () => {
             <Link to="/dashboard">Dashboard</Link>
           </li>
           <li>
-            <button onClick={() => signOut(auth)}>Sign out</button>
+            <button onClick={handleSignOut}>Sign out</button>
           </li>
         </>
       ) : (
         <li>
-          <Link to="/login">Login</Link>
+          <Link  to="/login">Login</Link>
         </li>
       )}
       <li>
@@ -39,10 +48,13 @@ const Navbar = () => {
       {user?<li className="my-1">
       <span  className="whitespace-nowrap">{user.displayName}</span>
       </li>:''}
+      <li>
+        <Link to="/home">Home</Link>
+      </li>
     </>
   );
   return (
-    <div class="navbar bg-neutral text-neutral-content">
+    <div class="navbar bg-slate-600 text-white">
       <div className="navbar-start">
         <div class="dropdown ">
           <label tabindex="0" class="btn btn-ghost lg:hidden">
@@ -68,10 +80,10 @@ const Navbar = () => {
             {title}
           </ul>
         </div>
-        <a class="btn btn-ghost normal-case text-xl">daisyUI</a>
+        <div className="flex items-center"><img className="w-16 h-12" src="https://i.ibb.co/JQNgfzm/png-transparent-kodi-television-streaming-media-plug-in-hi-tech-miscellaneous-television-computer-re.webp" alt="" /><a class="btn btn-ghost normal-case text-xl italic ">CTG Tools Technology Co.</a></div>
       </div>
       <div class="navbar-end hidden lg:flex">
-        <ul class="menu menu-horizontal p-0">{title}</ul>
+        <ul class="menu menu-horizontal p-0 ">{title}</ul>
       </div>
     </div>
   );

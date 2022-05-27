@@ -11,11 +11,11 @@ const Tools = () => {
   }
   return (
     <div className="pt-4">
-      <h1 className="text-4xl font-bold text-primary text-center underline">Featured Tools</h1>
+      <h1 className="text-4xl font-semibold text-slate-600 text-center underline italic">Featured Tools</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center gap-8 mt-6">
-        {tools.map((tool) => (
+        {tools?.length && (tools.map((tool) => (
           <ToolCard key={tool._id} tool={tool}></ToolCard>
-        ))}
+        ))).reverse().slice(0,6)}
       </div>
     </div>
   );

@@ -34,7 +34,7 @@ const ManageProductRow = ({ index, refetch, tool }) => {
       <td>{_id}</td>
 
       <td>
-        <button onClick={handleDlt} class="btn btn-success">
+        <button onClick={handleDlt} class="btn btn-error">
           Delete
         </button>
       </td>

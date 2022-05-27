@@ -26,6 +26,9 @@ const Purchase = () => {
   let orderedQuantity, totalAmount;
   const handleItem = (event) => {
     event.preventDefault();
+    const Address = event.target.address.value;
+   const  Phone = event.target.phone.value;
+ 
     const inputQ = event.target.quantity.value;
     orderedQuantity = parseInt(inputQ);
     console.log(orderedQuantity,price)
@@ -51,7 +54,9 @@ const Purchase = () => {
           name: user.displayName,
           email: user.email,
           orderedNum: orderedQuantity,
-          role: "user",
+          phone:Phone,
+          address:Address,
+        
           totalAmount: totalAmount,
           status: "unpaid"
         };
@@ -70,24 +75,7 @@ const Purchase = () => {
         refetch();
       });
   };
-  const handleUser = (event) => {
-    event.preventDefault();
-    const Address = event.target.address.value;
-    const Phone = event.target.phone.value;
-    const profile = { address: Address, phone: Phone };
-    fetch(`http://localhost:5000/user?email=${user.email}`, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(profile),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        event.target.reset();
-      });
-  };
+
   return (
     <div>
     
@@ -105,28 +93,13 @@ const Purchase = () => {
                 <p className="text-lg font-semibold">{description}</p>
                 <p>Minimum Order:{minimumOrder}</p>
                 <p>Quantity:{quantity}</p>
-                {/* <p>Price :{price}</p> */}
-                <form className="my-2" onSubmit={handleItem}>
-                  <input
-                    name="quantity"
-                    class="input input-bordered"
-                    type="number"
-                    id=""
-                    placeholder={minimumOrder}
-                  />
-                  <br />
-                  <input
-                    type="submit"
-                    value="Add to cart"
-                    class="btn btn-primary my-2"
-                  />
-                </form>
+               
               </div>
             </div>
           </div>
           <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl ">
             <div class="card-body">
-              <form onSubmit={handleUser} className="grid grid-cols-1 ">
+              <form onSubmit={handleItem} className="grid grid-cols-1 ">
                 <input
                   class="input input-bordered"
                   type="text"
@@ -161,6 +134,14 @@ const Purchase = () => {
                   placeholder="Address"
                 />
                 <br />
+                <input
+                    name="quantity"
+                    class="input input-bordered"
+                    type="number"
+                    id=""
+                    placeholder={minimumOrder}
+                  />
+                  <br />
 
                 <input
              

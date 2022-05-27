@@ -20,6 +20,8 @@ import MakeAdmin from './Page/Dashboard.js/Admin/MakeAdmin'
 import ManageProducts from './Page/Dashboard.js/Admin/ManageProducts'
 import ManageAllOrders from './Page/Dashboard.js/Admin/ManageAllOrders'
 import Footer from './Shared.js/Footer'
+import MyPortfolio from './Page/MyPortfolio';
+import NotFound from './Page/NotFound';
 function App() {
   return (
     <div className="App">
@@ -47,6 +49,8 @@ function App() {
           </Route> 
           
         <Route path='/blog' element={<Blog></Blog>}></Route> 
+        <Route path='/myportfolio' element={<MyPortfolio></MyPortfolio>}></Route> 
+        <Route path='*' element={<NotFound></NotFound>}></Route> 
         
         
       </Routes>

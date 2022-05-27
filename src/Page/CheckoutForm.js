@@ -14,6 +14,7 @@ const CheckoutForm = ({totalAmount}) => {
         })
           .then((res) => res.json())
           .then((data) => {
+            console.log(data)
              if(data?.clientSecret){
             setClientSecret(data.clientSecret);
           }
@@ -62,7 +63,7 @@ const CheckoutForm = ({totalAmount}) => {
         }}
       />
       <button className='btn btn-sm btn-success
-      ' type="submit" disabled={!stripe||!clientSecret}>
+      ' type="submit" >
         Pay
       </button>
     </form>
