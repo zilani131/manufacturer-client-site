@@ -6,7 +6,7 @@ const ProductDlt = ({dlt,setDlt,refetch}) => {
         const {name,_id}=dlt
     const handleDlt=(event)=>{
         event.preventDefault();
-        fetch(`http://localhost:5000/product/${_id}`, {
+        fetch(`https://cryptic-dawn-85784.herokuapp.com/product/${_id}`, {
           method: "DELETE",
           headers: {
             "Content-Type": "application/json",

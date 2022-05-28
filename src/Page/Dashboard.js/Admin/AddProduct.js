@@ -10,7 +10,7 @@ const AddProduct = () => {
         const minimumOrder=event.target.minimumOrder.value;
         const price=event.target.price.value;
         const productDetail={name,img,description,quantity,minimumOrder,price}
-        fetch('http://localhost:5000/tools',{
+        fetch('https://cryptic-dawn-85784.herokuapp.com/tools',{
             method: 'POST', // or 'PUT'
             headers: {
               'Content-Type': 'application/json',

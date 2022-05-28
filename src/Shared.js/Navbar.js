@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import auth from "../firebase.init";
 import Loading from "../Utilities.js/Loading";
 import { signOut } from "firebase/auth";
-import useUserDetails from "../Hooks/useUserDetails";
+
 
 const Navbar = () => {
   const [user, loading, error] = useAuthState(auth);
@@ -46,7 +46,7 @@ const Navbar = () => {
         <Link to="/blog">Blog</Link>
       </li>
       {user?<li className="my-1">
-      <span  className="whitespace-nowrap">{user.displayName}</span>
+      <span  className="whitespace-nowrap">{user?.displayName}</span>
       </li>:''}
       <li>
         <Link to="/myportfolio">My Portfolio</Link>

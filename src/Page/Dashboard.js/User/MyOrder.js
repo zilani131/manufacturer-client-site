@@ -24,7 +24,7 @@ const MyOrder = () => {
   //   data: users,
   //   refetch,
   // } = useQuery("tool", () =>
-  //   fetch(`http://localhost:5000/user?email=${user?.email}`).then((res) =>
+  //   fetch(`https://cryptic-dawn-85784.herokuapp.com/user?email=${user?.email}`).then((res) =>
   //     res.json()
   //   )
   // );

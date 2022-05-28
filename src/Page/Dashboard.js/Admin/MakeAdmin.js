@@ -10,7 +10,7 @@ const MakeAdmin = () => {
         data: allusers,
         refetch,
       } = useQuery("alluser", () =>
-        fetch(`http://localhost:5000/alluser`).then((res) => res.json()))
+        fetch(`https://cryptic-dawn-85784.herokuapp.com/alluser`).then((res) => res.json()))
         if(isLoading){
             return <Loading></Loading>
         }

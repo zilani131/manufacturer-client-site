@@ -10,7 +10,7 @@ const UserReviews = () => {
         data: reviews,
        
       } = useQuery("tool", () =>
-        fetch(`http://localhost:5000/reviews`).then((res) => res.json())
+        fetch(`https://cryptic-dawn-85784.herokuapp.com/reviews`).then((res) => res.json())
       );
     if(isLoading)
     {

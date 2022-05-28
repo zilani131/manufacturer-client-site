@@ -17,7 +17,7 @@ const Profile = () => {
     <Loading></Loading>;
   }
 
-  //  fetch(`http://localhost:5000/userdetails/${user?.email}`)
+  //  fetch(`https://cryptic-dawn-85784.herokuapp.com/userdetails/${user?.email}`)
   //  .then(res=>res.json())
   //  .then(data=>console.log(data))
   //   console.log(user.email)
@@ -31,7 +31,7 @@ const Profile = () => {
     console.log(name, email, phone, linkedin, education);
     const profile = { name, email, phone, linkedin, education };
 
-    fetch(`http://localhost:5000/updatedetails/${user.email}`, {
+    fetch(`https://cryptic-dawn-85784.herokuapp.com/updatedetails/${user.email}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

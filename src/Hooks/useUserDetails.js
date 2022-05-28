@@ -3,7 +3,7 @@ import { useQuery } from "react-query";
 
 const useUserDetails = (email) => {
   const {   isLoading1, error1,data: users,refetch1} = useQuery("userdata", () =>
-    fetch(`http://localhost:5000/userdetails/${email}`).then(res =>
+    fetch(`https://cryptic-dawn-85784.herokuapp.com/userdetails/${email}`).then(res =>
       res.json()
     )
   );

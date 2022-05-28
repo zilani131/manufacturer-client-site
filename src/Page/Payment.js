@@ -17,7 +17,7 @@ const Payment = () => {
     data: payment,
     refetch,
   } = useQuery(["payments",id], () =>
-    fetch(`http://localhost:5000/payment/${id}`).then((res) => res.json())
+    fetch(`https://cryptic-dawn-85784.herokuapp.com/payment/${id}`).then((res) => res.json())
   );
   if (isLoading) {
     return <Loading></Loading>;

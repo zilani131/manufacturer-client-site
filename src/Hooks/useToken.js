@@ -9,7 +9,7 @@ const email=user?.user?.email
 const name=user?.user?.displayName
 const currentUser={name:name,email:email};
 if(email){
-    fetch(`http://localhost:5000/userdetails/${email}`,{
+    fetch(`https://cryptic-dawn-85784.herokuapp.com/userdetails/${email}`,{
         method:"PUT",
         headers:{
             'content-type':"application/json"

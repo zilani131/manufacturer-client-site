@@ -6,7 +6,7 @@ const MyOrderRow = ({user,index,refetch,setCancel}) => {
      const {productName,_id,orderedNum,status}=user;
     //  const handleDelete=(event)=>{
     //     //  event.preventDefault();
-    //      fetch(`http://localhost:5000/user/${_id}`,{
+    //      fetch(`https://cryptic-dawn-85784.herokuapp.com/user/${_id}`,{
     //          method:"DELETE",
     //          headers: {
     //             'Content-Type':'application/json',

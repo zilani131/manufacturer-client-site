@@ -12,7 +12,7 @@ const MakeAdminRow = ({index,refetch,user}) => {
     const handleAdmin=event=>{
         event.preventDefault();
         const data={role:"Admin"};
-          fetch(`http://localhost:5000/alluser?email=${email}`,{
+          fetch(`https://cryptic-dawn-85784.herokuapp.com/alluser?email=${email}`,{
             method: "PUT",
             headers: {
               "Content-Type": "application/json",

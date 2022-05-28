@@ -5,7 +5,7 @@ const ManageOrdersRow = ({index,order,refetch}) => {
     const handleShip=(event)=>{
         event.preventDefault();
         const newStatus={status:"shipped"}
-        fetch(`http://localhost:5000/order/${_id}`,{
+        fetch(`https://cryptic-dawn-85784.herokuapp.com/order/${_id}`,{
             method:"PUT",
             headers: {
                'Content-Type':'application/json',

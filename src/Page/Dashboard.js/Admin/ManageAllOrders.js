@@ -11,7 +11,7 @@ const ManageOrders = () => {
     data: orders,
     refetch,
   } = useQuery("orderlist", () =>
-    fetch(`http://localhost:5000/orderlist`).then((res) =>
+    fetch(`https://cryptic-dawn-85784.herokuapp.com/orderlist`).then((res) =>
       res.json()
     )
   );

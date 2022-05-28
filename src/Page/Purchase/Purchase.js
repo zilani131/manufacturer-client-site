@@ -17,7 +17,7 @@ const Purchase = () => {
     data: tool,
     refetch,
   } = useQuery("tool", () =>
-    fetch(`http://localhost:5000/purchase/${_id}`).then((res) => res.json())
+    fetch(`https://cryptic-dawn-85784.herokuapp.com/purchase/${_id}`).then((res) => res.json())
   );
   if (isLoading || loading) {
     return <Loading></Loading>;
@@ -41,7 +41,7 @@ const Purchase = () => {
     const newQuantity = quantity - inputQ;
     console.log(newQuantity);
     const updatedQuantity = { newQuantity };
-    fetch(`http://localhost:5000/purchase/${_id}`, {
+    fetch(`https://cryptic-dawn-85784.herokuapp.com/purchase/${_id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -61,7 +61,7 @@ const Purchase = () => {
           totalAmount: totalAmount,
           status: "unpaid"
         };
-        fetch(`http://localhost:5000/user?email=${user.email}`, {
+        fetch(`https://cryptic-dawn-85784.herokuapp.com/user?email=${user.email}`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

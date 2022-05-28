@@ -1,6 +1,28 @@
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Website name: [CTG Tools Technology Co.](https://manufacturer-website-23b93.web.app/)
+## Git hub Client side Link:https://github.com/programming-hero-web-course1/manufacturer-website-client-side-zilani131
+## Git hub Server side Link:https://github.com/programming-hero-web-course1/manufacturer-website-server-side-zilani131
+## Available Scripts
+### Website Functionality and Feature
+* #### Home page
+* #### Responsive nav bar
+* #### Login page with react form 
+* #### Registration page
+* #### Authentication method
+* #### Responsive website
+* #### Sign in and Sign up with google Functionality 
+* #### Email and password verification
+* #### used webp format pic for better performance and website optimization
+### Technology
+* #### React router
+* #### Tailwind
+* #### daisyUI
+* #### Firebase hooks
+* #### Hero icon
+* #### MongoDB 
+* #### node.js
 
 ## Available Scripts
 

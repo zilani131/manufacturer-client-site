@@ -5,7 +5,7 @@ const CancelModal = ({refetch,cancel}) => {
     const {productName,_id}=cancel
     const handleCancel=(event)=>{
          event.preventDefault();
-         fetch(`http://localhost:5000/user/${_id}`,{
+         fetch(`https://cryptic-dawn-85784.herokuapp.com/user/${_id}`,{
              method:"DELETE",
              headers: {
                 'Content-Type':'application/json',

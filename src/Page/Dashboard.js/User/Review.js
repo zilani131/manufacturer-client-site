@@ -14,7 +14,7 @@ const Review = () => {
         const review=event.target.description.value;
         const userName=user.displayName;
         const reviews={review,rating,userName}
-        fetch('http://localhost:5000/reviews',{
+        fetch('https://cryptic-dawn-85784.herokuapp.com/reviews',{
             method:'POST',
             headers: {
                 "Content-Type": "application/json",
