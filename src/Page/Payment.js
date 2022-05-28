@@ -9,6 +9,7 @@ const stripePromise = loadStripe(
   "pk_test_51L3OyhAvteCnNItpVEaFa6N5NXLnFyX4tYvmp85XeD5IkQKdp31ThESIJEBkOp2apVPExgr8mfMXpatGMtnNJ1IL00jpN3rcyH"
 );
 const Payment = () => {
+  // Got an error
  
   const { id } = useParams();
   const {

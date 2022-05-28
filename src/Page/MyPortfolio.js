@@ -14,6 +14,7 @@ const MyPortfolio = () => {
           <p className='flex flex-row items-center '><MailIcon className='h-8'></MailIcon> <p className='text-xl font-medium ml-3'>zilani.cuet@gmail.com</p></p>
           <p className='flex flex-row items-center '><AcademicCapIcon className='h-8'></AcademicCapIcon> <p className='text-xl font-medium ml-3'>Bsc in Mechanical Engineering,CUET</p></p>
          <p className='text-xl font-medium flex flex-row'>Skills :
+         {/* skills icon */}
           <img className='h-8 mr-1' src="https://i.ibb.co/41XPBKH/html-removebg-preview.webp" title='Html' alt="Html" />
           <img className='h-8 mr-1' src="https://i.ibb.co/6X677xy/CSS3-logo-svg-removebg-preview.webp" title='CSS' alt="CSS" />
           <img className='h-8 mr-1' src="https://i.ibb.co/6Fj8TL8/Bootstrap-logo-svg-removebg-preview.webp" alt="Bootstrap" />
@@ -25,11 +26,14 @@ const MyPortfolio = () => {
 
           <img className='h-8' src="https://i.ibb.co/xXVkBpM/download-removebg-preview.webp" alt="Mongodb" />
            </p>
-           <p className='text-2xl font-bold'>Till now my best website link:
-               <li><a href=""></a></li>
+           {/* My best website */}
+           <p className='text-xl font-bold'>Till now my best website link:
+               <li className='text-lg font-medium '><a className='underline text-slate-600' href="https://manufacturer-website-23b93.web.app/">CTG Tools Technology Co.</a></li>
+               <li className='text-lg font-medium '><a className='underline text-slate-600' href="https://warehouse-update-host.web.app/">Bangla Motors.</a></li>
+               <li className='text-lg font-medium '><a className='underline text-slate-600' href="https://curious-basbousa-445312.netlify.app/">Pc Bazar</a></li>
            </p>
-           <h1 className='text-lg font-bold'>About me</h1>
-           <p className='text-md font-medium'>Assalamualaikum . I am a tech enthusiast .During covid when my university was off , I was thinking how to utilize my time .Then I try to learn programming language and web technology .And now i am very passionate about web technology and programming . In future i want to build a career in web technology.</p>
+           <h1 className='text-xl font-bold'>About me</h1>
+           <p className='text-lg font-medium'>Assalamualaikum . I am a tech enthusiast .During covid when my university was off , I was thinking how to utilize my time .Then I try to learn programming language and web technology .And now i am very passionate about web technology and programming . In future i want to build a career in web technology.</p>
         </div>
       </div>
     );

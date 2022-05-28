@@ -82,6 +82,7 @@ if(user||guser){
             <h2 className="text-2xl  font-bold text-primary">Registration</h2>
             <div className="flex flex-col w-full border-opacity-50">
               <div className="grid w-11/12 card  rounded-box place-items-center">
+                {/* handle submit form */}
                 <form
                   onSubmit={handleSubmit}
                   className="grid grid-cols-1 gap-6 my-4 justify-items-center w-full px-4"
