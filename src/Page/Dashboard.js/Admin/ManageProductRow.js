@@ -17,7 +17,7 @@ const ManageProductRow = ({ index, refetch, tool,setDlt }) => {
       </td>
       <td>{_id}</td>
 
-      <td><label onClick={()=>setDlt(tool)} for="cancelModal" class="btn btn-error btn-sm">Cancel Order</label>
+      <td><label onClick={()=>setDlt(tool)} for="cancelModal" className="btn btn-error btn-sm">Cancel Order</label>
         
       </td>
     </tr>

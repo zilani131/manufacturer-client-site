@@ -1,3 +1,4 @@
+import { MenuIcon } from '@heroicons/react/solid';
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link, Outlet } from 'react-router-dom';
@@ -32,25 +33,19 @@ const Dashboard = () => {
          <li><Link to="/dashboard/manageproducts">Manage Products</Link></li>
   </>
     return (
-        <div class="drawer drawer-mobile bg-gray-50">
-        <input id="dashboardDrawer" type="checkbox" class="drawer-toggle" />
-        <div class="drawer-content ">
+        <div className="drawer drawer-mobile bg-gray-50">
+        <input id="dashboardDrawer" type="checkbox" className="drawer-toggle" />
+        <div className="drawer-content ">
          <h2 className='text-3xl text-slate-600 text-center underline my-4'>Dashboard</h2>
-         <label for="dashboardDrawer" tabindex="0" class=" drawer-button btn btn-primary lg:hidden"><svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-5 w-5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            /></label>
+         <label for="dashboardDrawer" tabIndex="0" className="  lg:hidden"> <MenuIcon className='h-6 '></MenuIcon> </label>
          <Outlet /> 
          {/* outlet is the nested screen and show the content we want to show  in this frame by nested routes */}
-         {/* <label for="dashboardDrawer" class="btn btn-primary drawer-button lg:hidden">Open drawer</label> */}
+         {/* <label for="dashboardDrawer" className="btn btn-primary drawer-button lg:hidden">Open drawer</label> */}
         
         </div> 
-        <div class="drawer-side">
-          <label for="my-drawer-2" class="drawer-overlay"></label> 
-          <ul class="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content">
+        <div className="drawer-side">
+          <label for="my-drawer-2" className="drawer-overlay"></label> 
+          <ul className="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content">
             {/* <!-- Sidebar content here --> */}
             <li><Link to="/dashboard">Profile</Link></li>
            {role!=="Admin"?userRoutes:""}

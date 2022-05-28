@@ -29,7 +29,7 @@ const ManageOrdersRow = ({index,order,refetch}) => {
         <td>{email}</td>
         <td>{prodcutName}</td>
         <td>{status}</td>
-        <td><button disabled={status==="unpaid"} onClick={handleShip} class="btn btn-success">Shipping</button></td>
+        <td><button disabled={status==="unpaid"} onClick={handleShip} className="btn btn-success">Shipping</button></td>
 
       </tr>
     );

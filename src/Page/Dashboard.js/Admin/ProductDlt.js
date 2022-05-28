@@ -28,17 +28,17 @@ const ProductDlt = ({dlt,setDlt,refetch}) => {
 
 
 {/* <!-- Put this part before </body> tag --> */}
-<input type="checkbox" id="cancelModal" class="modal-toggle " />
-<div class="modal bg-transparent">
-  <div class="modal-box bg-error">
-    <h3 class="font-bold text-lg">Are you sure you want to delete {name}</h3>
+<input type="checkbox" id="cancelModal" className="modal-toggle " />
+<div className="modal bg-transparent">
+  <div className="modal-box bg-error">
+    <h3 className="font-bold text-lg">Are you sure you want to delete {name}</h3>
    
-    <div class="modal-action">
+    <div className="modal-action">
       <button className='btn btn-success' onClick={handleDlt}>
           
           Delete
       </button>
-      <label for="cancelModal" class="btn">Close</label>
+      <label for="cancelModal" className="btn">Close</label>
     </div>
   </div>
 </div>

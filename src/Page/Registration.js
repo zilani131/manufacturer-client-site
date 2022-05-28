@@ -77,11 +77,11 @@ if(user||guser){
   return (
     <div>
       <div className=" flex h-screen justify-center items-center">
-        <div class="card w-96 bg-base-100 shadow-xl">
-          <div class="card-body grid grid-cols-1 justify-items-center">
-            <h2 class="text-2xl  font-bold text-primary">Registration</h2>
-            <div class="flex flex-col w-full border-opacity-50">
-              <div class="grid w-11/12 card  rounded-box place-items-center">
+        <div className="card w-96 bg-base-100 shadow-xl">
+          <div className="card-body grid grid-cols-1 justify-items-center">
+            <h2 className="text-2xl  font-bold text-primary">Registration</h2>
+            <div className="flex flex-col w-full border-opacity-50">
+              <div className="grid w-11/12 card  rounded-box place-items-center">
                 <form
                   onSubmit={handleSubmit}
                   className="grid grid-cols-1 gap-6 my-4 justify-items-center w-full px-4"
@@ -90,25 +90,25 @@ if(user||guser){
                     type="text"
                     name="name"
                     placeholder="Please Enter your name"
-                    class="input input-bordered input-info w-full max-w-xs"
+                    className="input input-bordered input-info w-full max-w-xs"
                   />
                   <input
                     type="email"
                     name="email"
                     placeholder="Please Enter the email"
-                    class="input input-bordered input-info w-full max-w-xs"
+                    className="input input-bordered input-info w-full max-w-xs"
                   />
                   <input
                     type="password"
                     name="password"
                     placeholder="Password"
-                    class="input input-bordered input-info w-full max-w-xs"
+                    className="input input-bordered input-info w-full max-w-xs"
                   />
                   <input
                     type="password"
                     name="cPass"
                     placeholder="confirm password"
-                    class="input input-bordered input-info w-full max-w-xs"
+                    className="input input-bordered input-info w-full max-w-xs"
                   />
                   {cerror && <div className="text-red-500">{err}</div>}
                   {gerror && <div className="text-red-500">{gerr}</div>}
@@ -116,7 +116,7 @@ if(user||guser){
                   <input
                     type="submit"
                     placeholder="Type here"
-                    class="btn btn-primary w-8/12 max-w-xs"
+                    className="btn btn-primary w-8/12 max-w-xs"
                   />
                  
                 </form>
@@ -128,11 +128,11 @@ if(user||guser){
                 </div>
               </div>
               {/* divider */}
-              <div class="divider">OR</div>
-              <div class="grid h-20 card rounded-box place-items-center">
+              <div className="divider">OR</div>
+              <div className="grid h-20 card rounded-box place-items-center">
                 <button
                   onClick={() => signInWithGoogle()}
-                  class="btn btn-outline"
+                  className="btn btn-outline"
                 >
                <img className='h-8 m-1' src="https://i.ibb.co/h9c4Fyb/google.webp" alt="" />   Sign in with Google
                 </button>

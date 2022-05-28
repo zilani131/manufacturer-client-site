@@ -32,13 +32,13 @@ const Review = () => {
       <form onSubmit={handleAdd} className="grid grid-cols-1 w-2/4 bg-white p-5 rounded-md mx-auto">
         <textarea
           name="description"
-          class="textarea textarea-bordered"
+          className="textarea textarea-bordered"
           type="text"
           id=""
           placeholder="comment"
         />
         <br />
-        <select name="star" class="select select-bordered w-full  " placeholder="rating">
+        <select name="star" className="select select-bordered w-full  " placeholder="rating">
           <option>1</option>
           <option>2</option>
           <option>3</option>
@@ -46,7 +46,7 @@ const Review = () => {
           <option>5</option>
         </select>
         <br />
-        <input   type="submit" value="Add to cart" class="btn btn-primary" />
+        <input   type="submit" value="Add to cart" className="btn btn-primary" />
       </form>
      
     </div>

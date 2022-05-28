@@ -3,49 +3,50 @@ import React, { useEffect, useState } from 'react';
 
 const CheckoutForm = ({payment}) => {
 
-    console.log(payment?.totalAmount)
-    const [clientSecret, setClientSecret] = useState("");
-    useEffect(() => {
-        // Create PaymentIntent as soon as the page loads
-        fetch("http://localhost:5000//create-payment-intent", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(payment?.totalAmount),
-        })
-          .then((res) => res.json())
-          .then((data) => {
-            console.log(data)
-             if(data?.clientSecret){
-            setClientSecret(data.clientSecret);
-          }
+    // console.log(payment?.totalAmount)
+    // const [clientSecret, setClientSecret] = useState("");
+    // useEffect(() => {
+    //     // Create PaymentIntent as soon as the page loads
+    //     fetch("http://localhost:5000//create-payment-intent", {
+    //       method: "POST",
+    //       headers: { "Content-Type": "application/json" },
+    //       body: JSON.stringify(payment?.totalAmount),
+    //     })
+    //       .then((res) => res.json())
+    //       .then((data) => {
+    //         console.log(data)
+    //          if(data?.clientSecret){
+    //         setClientSecret(data.clientSecret);
+    //       }
           
-      })}, [payment?.totalAmount]);
-    const stripe = useStripe();
-    const elements = useElements();
-    const [cardError,setCardError]=useState('')
+    //   })}, [payment?.totalAmount]);
+    // const stripe = useStripe();
+    // const elements = useElements();
+    // const [cardError,setCardError]=useState('')
 
-    const handleSubmit=async (event)=>{
-        event.preventDefault();
-        if (!stripe || !elements) {
+    // const handleSubmit=async (event)=>{
+    //     event.preventDefault();
+    //     if (!stripe || !elements) {
          
-            return;
-          }
+    //         return;
+    //       }
       
-          const card = elements.getElement(CardElement);
+    //       const card = elements.getElement(CardElement);
       
-          if (card == null) {
-            return;
-          }
-          const {error, paymentMethod} = await stripe.createPaymentMethod({
-            type: 'card',
-            card,
-          });
-          setCardError(error?.message||'')
+    //       if (card == null) {
+    //         return;
+    //       }
+    //       const {error, paymentMethod} = await stripe.createPaymentMethod({
+    //         type: 'card',
+    //         card,
+    //       });
+    //       setCardError(error?.message||'')
 
-    }
+    // }
     return (
       <>
-        <form onSubmit={handleSubmit}>
+        {/* <form onSubmit={handleSubmit}> */}
+        <form >
       <CardElement
         options={{
           style: {
@@ -62,12 +63,12 @@ const CheckoutForm = ({payment}) => {
           },
         }}
       />
-      <button className='btn btn-sm btn-success
+      <button disabled className='btn btn-sm btn-success
       ' type="submit" >
         Pay
       </button>
     </form>
-    {cardError && <p className='text-red-500'> {cardError}</p>}
+    {/* {cardError && <p className='text-red-500'> {cardError}</p>} */}
       </>
     );
 };

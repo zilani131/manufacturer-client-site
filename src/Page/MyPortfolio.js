@@ -3,14 +3,14 @@ import React from 'react';
 
 const MyPortfolio = () => {
     return (
-        <div class="card w-6/12 bg-base-100 mx-auto my-10 shadow-xl">
-   <div class="avatar mx-auto my-6">
-  <div class="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+        <div className="card w-6/12 bg-base-100 mx-auto my-10 shadow-xl">
+   <div className="avatar mx-auto my-6">
+  <div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
     <img src="https://i.ibb.co/X8TJvtv/photo-2021-12-19-22-43-45-removebg-preview.webp" />
   </div>
 </div>
-        <div class="card-body items-start text-start">
-        <p className='flex flex-row items-center '>  <UserIcon className='h-8'></UserIcon><h2 class="card-title ml-3">MD.Abdul Kader Zilani</h2></p>
+        <div className="card-body items-start text-start">
+        <p className='flex flex-row items-center '>  <UserIcon className='h-8'></UserIcon><h2 className="card-title ml-3">MD.Abdul Kader Zilani</h2></p>
           <p className='flex flex-row items-center '><MailIcon className='h-8'></MailIcon> <p className='text-xl font-medium ml-3'>zilani.cuet@gmail.com</p></p>
           <p className='flex flex-row items-center '><AcademicCapIcon className='h-8'></AcademicCapIcon> <p className='text-xl font-medium ml-3'>Bsc in Mechanical Engineering,CUET</p></p>
          <p className='text-xl font-medium flex flex-row'>Skills :
@@ -25,7 +25,7 @@ const MyPortfolio = () => {
 
           <img className='h-8' src="https://i.ibb.co/xXVkBpM/download-removebg-preview.webp" alt="Mongodb" />
            </p>
-           <p>Till now my best website link:
+           <p className='text-2xl font-bold'>Till now my best website link:
                <li><a href=""></a></li>
            </p>
            <h1 className='text-lg font-bold'>About me</h1>

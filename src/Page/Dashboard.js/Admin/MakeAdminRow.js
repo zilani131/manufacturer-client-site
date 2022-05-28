@@ -33,7 +33,7 @@ const MakeAdminRow = ({index,refetch,user}) => {
         <td>{name}</td>
         <td>{email}</td>
        { role!=="Admin"?<td>User</td>:<td>{role}</td>}
-        <td><button onClick={handleAdmin} class="btn btn-success">Make Admin</button></td>
+        <td><button onClick={handleAdmin} className="btn btn-success">Make Admin</button></td>
 
       </tr>
     );

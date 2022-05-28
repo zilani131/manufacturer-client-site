@@ -15,16 +15,16 @@ const ToolCard = ({tool}) => {
     // }=useUserDetails(user?.email)
     // console.log(quantity)
     return (
-        <div class="card card-compact w-96 bg-white text-neutral-content shadow-xl">
+        <div className="card card-compact w-96 bg-white text-neutral-content shadow-xl">
         <figure className='p-8'><img className='h-40' src={img} alt={name} /></figure>
-        <div class="card-body text-black font-bold">
-          <h2 class=" text-center text-2xl">{name}</h2>
+        <div className="card-body text-black font-bold">
+          <h2 className=" text-center text-2xl">{name}</h2>
           <p className='text-left'>{description.slice(0,100)+'...'}</p>
           <p className='text-left'>Quantity:{quantity}</p>
           <p className='text-left'>Minimum Order:{minimumOrder}</p>
           <p className='text-left'>Price:{price}</p>
-          <div class="card-actions justify-center">
-            <Link   to={`/purchase/${_id}`} class="btn btn-primary ">Buy Now</Link>
+          <div className="card-actions justify-center">
+            <Link   to={`/purchase/${_id}`} className="btn btn-primary ">Buy Now</Link>
           </div>
         </div>
     

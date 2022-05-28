@@ -81,16 +81,16 @@ const Purchase = () => {
     <div>
     
     
-      <div class="hero min-h-screen ">
-        <div class="hero-content flex-col lg:flex-row">
-          <div class="text-center lg:text-left">
+      <div className="hero min-h-screen ">
+        <div className="hero-content flex-col lg:flex-row">
+          <div className="text-center lg:text-left">
             {/* card items information*/}
-            <div class="card w-96 bg-base-100 shadow-xl py-4 px-2">
+            <div className="card w-96 bg-base-100 shadow-xl py-4 px-2">
               <figure>
                 <img className="w-10/12" src={img} alt={name} />
               </figure>
-              <div class="card-body text-center lg:text-left my-4">
-                <h2 class="card-title">{name}</h2>
+              <div className="card-body text-center lg:text-left my-4">
+                <h2 className="card-title">{name}</h2>
                 <p className="text-lg font-semibold">{description}</p>
                 <p>Minimum Order:{minimumOrder}</p>
                 <p>Quantity:{quantity}</p>
@@ -98,11 +98,11 @@ const Purchase = () => {
               </div>
             </div>
           </div>
-          <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl ">
-            <div class="card-body">
+          <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl ">
+            <div className="card-body">
               <form onSubmit={handleItem} className="grid grid-cols-1 ">
                 <input
-                  class="input input-bordered"
+                  className="input input-bordered"
                   type="text"
                   id=""
                   value={user.displayName}
@@ -110,7 +110,7 @@ const Purchase = () => {
                 />
                 <br />
                 <input
-                  class="input input-bordered"
+                  className="input input-bordered"
                   type="email"
                   id=""
                   value={user.email}
@@ -118,7 +118,7 @@ const Purchase = () => {
                 />
                 <br />
                 <input
-                  class="input input-bordered"
+                  className="input input-bordered"
                   name="phone"
                   type="number"
                   id=""
@@ -127,7 +127,7 @@ const Purchase = () => {
                 />
                 <br />
                 <textarea
-                  class="input input-bordered h-full"
+                  className="input input-bordered h-full"
                   name="address"
                   type="text"
                   id=""
@@ -137,7 +137,7 @@ const Purchase = () => {
                 <br />
                 <input
                     name="quantity"
-                    class="input input-bordered"
+                    className="input input-bordered"
                     type="number"
                     id=""
                     placeholder={minimumOrder}
@@ -149,7 +149,7 @@ const Purchase = () => {
            
                   type="submit"
                   value="Proceed to order"
-                  class="btn btn-primary"
+                  className="btn btn-primary"
                 />
               </form>
             </div>

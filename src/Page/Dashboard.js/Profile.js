@@ -8,6 +8,7 @@ import useUserDetails from "../../Hooks/useUserDetails";
 import Loading from "../../Utilities.js/Loading";
 
 const Profile = () => {
+  const unknown="https://i.ibb.co/vzqpPJM/user.webp"
   const [user, loading, erro] = useAuthState(auth);
   const {
     isLoading1, error1,data: users,refetch
@@ -51,10 +52,10 @@ const Profile = () => {
   return (
     <div>
       <div className="flex flex-col items-center  lg:flex-row mx-5">
-        <div class="w-5/12 card-body shadow-lg bg-white rounded-lg">
-          <div class="avatar mx-auto my-3">
-            <div class="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-              <img src={user?.photoURL} />
+        <div className="w-5/12 card-body shadow-lg bg-white rounded-lg">
+          <div className="avatar mx-auto my-3">
+            <div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+              {user?.photoURL===undefined? <img src={unknown} /> :<img src={user?.photoURL} />}
             </div>
           </div>
           <div className="flex items-center my-1"><UserIcon className="h-6 mr-1"></UserIcon> <h2 className=" text-lg font-semibold ">  {user?.displayName}</h2></div>
@@ -64,14 +65,14 @@ const Profile = () => {
           <div className="flex items-center my-1"><AcademicCapIcon className="h-6 mr-1"></AcademicCapIcon><p className="text-lg font-semibold ">Education:{users?.education}</p></div>
         </div>
 
-        <div class="card-body w-8/12">
+        <div className="card-body w-8/12">
           <form
             onSubmit={handleSubmit}
             className="flex flex-col w-11/12 card-body bg-white shadow-lg  p-8 rounded-lg mx-auto "
           >
             <h1 className="text-xl font-bold my-2">Update Your profile</h1>
             <input
-              class="input input-bordered"
+              className="input input-bordered"
               name="name"
               type="text"
               id=""
@@ -80,7 +81,7 @@ const Profile = () => {
             />
             <br />
             <input
-              class="input input-bordered"
+              className="input input-bordered"
               name="email"
               type="text"
               id=""
@@ -89,7 +90,7 @@ const Profile = () => {
             />
             <br />
             <input
-              class="input input-bordered"
+              className="input input-bordered"
               name="phone"
               type="number"
               id=""
@@ -98,7 +99,7 @@ const Profile = () => {
             />
             <br />
             <input
-              class="input input-bordered"
+              className="input input-bordered"
               name="linkedin"
               type="link"
               id=""
@@ -107,7 +108,7 @@ const Profile = () => {
             />
             <br />
             <textarea
-              class="input input-bordered h-full"
+              className="input input-bordered h-full"
               name="education"
               type="text"
               id=""
@@ -116,7 +117,7 @@ const Profile = () => {
             />
             <br />
 
-            <input type="submit" value="add" class="btn btn-primary" />
+            <input type="submit" value="add" className="btn btn-primary" />
           </form>
         </div>
       </div>

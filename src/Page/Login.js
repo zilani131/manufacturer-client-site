@@ -60,28 +60,28 @@ const Login = () => {
     }
       return (
         <div className=" flex h-screen justify-center items-center">
-          <div class="card w-96 bg-base-600 shadow-xl">
-            <div class="card-body grid grid-cols-1 justify-items-center">
-              <h2 class="text-2xl  font-bold text-primary">Log in</h2>
-              <div class="flex flex-col w-full border-opacity-50">
-                <div class="grid w-11/12 card  rounded-box place-items-center">
+          <div className="card w-96 bg-base-600 shadow-xl">
+            <div className="card-body grid grid-cols-1 justify-items-center">
+              <h2 className="text-2xl  font-bold text-primary">Log in</h2>
+              <div className="flex flex-col w-full border-opacity-50">
+                <div className="grid w-11/12 card  rounded-box place-items-center">
                <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-6 my-4 justify-items-center w-full px-4">
-               <input type="email" name="email" placeholder="Please Enter the email" class="input input-bordered input-info w-full max-w-xs" />
-                <input type="password" name="password" placeholder="password" class="input input-bordered input-info w-full max-w-xs" />
+               <input type="email" name="email" placeholder="Please Enter the email" className="input input-bordered input-info w-full max-w-xs" />
+                <input type="password" name="password" placeholder="password" className="input input-bordered input-info w-full max-w-xs" />
                 {error&&<div className="text-red-500">{err}</div>}
                 {gerror&&<div className="text-red-500">{gerr}</div>}
-                <input type="submit" placeholder="Type here" class="btn btn-primary w-8/12 max-w-xs" />
+                <input type="submit" placeholder="Type here" className="btn btn-primary w-8/12 max-w-xs" />
                </form>
                <div>
                <span className='whitespace-nowrap'>Forgot password? <button  className='btn btn-link'>Password Recover</button></span>  <span className=" whitespace-nowrap">New to this site? <Link to='/registration'><span className=" whitespace-nowrap text-primary">Registration</span></Link></span>
                </div>
                 </div>
                 {/* divider */}
-                <div class="divider">OR</div>
-                <div class="grid h-20 card rounded-box place-items-center">
+                <div className="divider">OR</div>
+                <div className="grid h-20 card rounded-box place-items-center">
                   <button
                     onClick={() => signInWithGoogle()}
-                    class="btn btn-outline"
+                    className="btn btn-outline"
                   >
                    <img className='h-8 m-1' src="https://i.ibb.co/h9c4Fyb/google.webp" alt="" /> Sign in with Google
                   </button>

@@ -2,7 +2,7 @@ import React from "react";
 
 const Blog = () => {
   return (
-    <div class="w-8/12 mx-auto">
+    <div className="w-8/12 mx-auto">
       {/* <!-- row 1 --> */}
 
       <p>How will you improve the performance of react application? </p>

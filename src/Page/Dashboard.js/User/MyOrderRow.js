@@ -30,10 +30,10 @@ const MyOrderRow = ({user,index,refetch,setCancel}) => {
         <td>{productName}</td>
         <td>{orderedNum}</td>
         <td>{status}</td>
-        <td><label onClick={()=>setCancel(user)} for="cancelModal" class="btn btn-error btn-sm">Cancel Order</label>
+        <td><label onClick={()=>setCancel(user)} for="cancelModal" className="btn btn-error btn-sm">Cancel Order</label>
             </td>
         <td> 
-            <Link to={`/dashboard/payment/${_id}`}  class="btn btn-success btn-sm">Payment</Link></td>
+            <Link to={`/dashboard/payment/${_id}`}  className="btn btn-success btn-sm">Payment</Link></td>
       </tr>
       
     );

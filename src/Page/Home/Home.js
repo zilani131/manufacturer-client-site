@@ -12,7 +12,7 @@ const Home = () => {
     return (
         <div className='bg-gray-100'>
        
-            {/* <Banner></Banner> */}
+            <Banner></Banner>
             <BuissenessSummary></BuissenessSummary>
             <Tools></Tools>
             <HeroProduct></HeroProduct>
