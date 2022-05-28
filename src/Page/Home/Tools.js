@@ -9,6 +9,7 @@ const Tools = () => {
   if (isLoading) {
     return <Loading></Loading>;
   }
+  console.log(tools)
   return (
     <div className="pt-4">
       <h1 className="text-4xl font-semibold text-slate-600 text-center underline italic">Featured Tools</h1>

@@ -28,12 +28,13 @@ const Purchase = () => {
     event.preventDefault();
     const Address = event.target.address.value;
    const  Phone = event.target.phone.value;
- 
+   const minOrder=parseInt(minimumOrder);
+   const maxOrder=parseInt(orderedQuantity);
     const inputQ = event.target.quantity.value;
     orderedQuantity = parseInt(inputQ);
-    console.log(orderedQuantity,price)
+    console.log(inputQ,orderedQuantity,price)
     totalAmount = orderedQuantity * price;
-    if (inputQ < minimumOrder || inputQ > quantity) {
+    if (orderedQuantity < minOrder || orderedQuantity > maxOrder) {
       event.target.reset();
       return alert("please input a valid number");
     }
@@ -84,9 +85,9 @@ const Purchase = () => {
         <div class="hero-content flex-col lg:flex-row">
           <div class="text-center lg:text-left">
             {/* card items information*/}
-            <div class="card w-96 bg-base-100 shadow-xl">
+            <div class="card w-96 bg-base-100 shadow-xl py-4 px-2">
               <figure>
-                <img src={img} alt={name} />
+                <img className="w-10/12" src={img} alt={name} />
               </figure>
               <div class="card-body text-center lg:text-left my-4">
                 <h2 class="card-title">{name}</h2>

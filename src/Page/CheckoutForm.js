@@ -1,16 +1,16 @@
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import React, { useEffect, useState } from 'react';
 
-const CheckoutForm = ({totalAmount}) => {
+const CheckoutForm = ({payment}) => {
 
-    console.log(totalAmount)
+    console.log(payment?.totalAmount)
     const [clientSecret, setClientSecret] = useState("");
     useEffect(() => {
         // Create PaymentIntent as soon as the page loads
         fetch("http://localhost:5000//create-payment-intent", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(totalAmount),
+          body: JSON.stringify(payment?.totalAmount),
         })
           .then((res) => res.json())
           .then((data) => {
@@ -19,7 +19,7 @@ const CheckoutForm = ({totalAmount}) => {
             setClientSecret(data.clientSecret);
           }
           
-      })}, [totalAmount]);
+      })}, [payment?.totalAmount]);
     const stripe = useStripe();
     const elements = useElements();
     const [cardError,setCardError]=useState('')

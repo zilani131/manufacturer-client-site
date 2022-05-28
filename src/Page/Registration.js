@@ -134,7 +134,7 @@ if(user||guser){
                   onClick={() => signInWithGoogle()}
                   class="btn btn-outline"
                 >
-                  Sign in with Google
+               <img className='h-8 m-1' src="https://i.ibb.co/h9c4Fyb/google.webp" alt="" />   Sign in with Google
                 </button>
               </div>
             </div>

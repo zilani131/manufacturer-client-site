@@ -13,6 +13,7 @@ const ToolCard = ({tool}) => {
     //   data: users,
     //   refetch1,
     // }=useUserDetails(user?.email)
+    // console.log(quantity)
     return (
         <div class="card card-compact w-96 bg-white text-neutral-content shadow-xl">
         <figure className='p-8'><img className='h-40' src={img} alt={name} /></figure>

@@ -16,7 +16,7 @@ const Payment = () => {
     error,
     data: payment,
     refetch,
-  } = useQuery("payment", () =>
+  } = useQuery(["payments",id], () =>
     fetch(`http://localhost:5000/payment/${id}`).then((res) => res.json())
   );
   if (isLoading) {
@@ -35,7 +35,7 @@ const Payment = () => {
       <div class="card w-full bg-base-200 shadow-xl p-4">
         <div class="card-body">
           <Elements stripe={stripePromise}>
-            <CheckoutForm totalAmount={totalAmount} />
+            <CheckoutForm payment={payment} />
           </Elements>
         </div>
       </div>

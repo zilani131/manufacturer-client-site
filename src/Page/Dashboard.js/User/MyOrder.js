@@ -5,11 +5,12 @@ import auth from "../../../firebase.init";
 
 import useUserOrders from "../../../Hooks/useUserOrders";
 import Loading from "../../../Utilities.js/Loading";
+import CancelModal from "./CancelModal";
 
 import MyOrderRow from "./MyOrderRow";
 
 const MyOrder = () => {
-
+ const [cancel,setCancel]=useState(null)
   const [user, loading, error1] = useAuthState(auth);
   const {
     isLoading,
@@ -54,12 +55,14 @@ const MyOrder = () => {
                 refetch={refetch}
                 index={index}
                 user={user}
+                setCancel={setCancel}
               ></MyOrderRow>
             ))}
           </tbody>
         </table>
       </div>
-      
+      {cancel && <CancelModal  key={user._id}
+               cancel={cancel} refetch={refetch}></CancelModal>}
     </div>
   );
 };

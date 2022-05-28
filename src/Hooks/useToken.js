@@ -6,7 +6,8 @@ const useToken = user => {
 //  console.log('user inside token',user); we have email in user.user.email
 console.log('user inside token',user); 
 const email=user?.user?.email
-const currentUser={email:email};
+const name=user?.user?.displayName
+const currentUser={name:name,email:email};
 if(email){
     fetch(`http://localhost:5000/userdetails/${email}`,{
         method:"PUT",

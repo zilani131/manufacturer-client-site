@@ -9,15 +9,13 @@ import Loading from "../../Utilities.js/Loading";
 
 const Profile = () => {
   const [user, loading, erro] = useAuthState(auth);
-  // const {
-  //   isLoading1, error1,data: users,refetch1
-  // } =useUserDetails(user?.email)
-  if (loading) {
+  const {
+    isLoading1, error1,data: users,refetch
+  } =useUserDetails(user?.email)
+  if (loading||isLoading1) {
     <Loading></Loading>;
   }
-  if (loading) {
-    <Loading></Loading>;
-  }
+
   //  fetch(`http://localhost:5000/userdetails/${user?.email}`)
   //  .then(res=>res.json())
   //  .then(data=>console.log(data))
@@ -42,26 +40,18 @@ const Profile = () => {
       .then((response) => response.json())
       .then((data) => {
         console.log("Success:", data);
-
+       
         event.target.reset();
-        // refetch1()
+        refetch()
       });
   };
-  const {
-    isLoading1,
-    error1,
-    data: users,
-    refetch1,
-  } = useUserDetails(user?.email);
-  if (isLoading1) {
-    return <Loading></Loading>;
-  }
+ 
   //  refetch();
   // console.log(user);
   return (
     <div>
       <div className="flex flex-col items-center  lg:flex-row mx-5">
-        <div class="w-5/12 card-body shadow-lg rounded-lg">
+        <div class="w-5/12 card-body shadow-lg bg-white rounded-lg">
           <div class="avatar mx-auto my-3">
             <div class="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
               <img src={user?.photoURL} />
@@ -77,7 +67,7 @@ const Profile = () => {
         <div class="card-body w-8/12">
           <form
             onSubmit={handleSubmit}
-            className="flex flex-col w-11/12 card-body shadow-lg  p-8 rounded-lg mx-auto "
+            className="flex flex-col w-11/12 card-body bg-white shadow-lg  p-8 rounded-lg mx-auto "
           >
             <h1 className="text-xl font-bold my-2">Update Your profile</h1>
             <input

@@ -29,15 +29,16 @@ const Review = () => {
     }
   return (
     <div>
-      <form onSubmit={handleAdd} className="grid grid-cols-1 w-2/4 bg-slate-800 p-5 rounded-md">
-        <input
+      <form onSubmit={handleAdd} className="grid grid-cols-1 w-2/4 bg-white p-5 rounded-md mx-auto">
+        <textarea
           name="description"
-          class="input input-bordered"
+          class="textarea textarea-bordered"
           type="text"
           id=""
+          placeholder="comment"
         />
         <br />
-        <select name="star" class="select select-bordered w-full ">
+        <select name="star" class="select select-bordered w-full  " placeholder="rating">
           <option>1</option>
           <option>2</option>
           <option>3</option>

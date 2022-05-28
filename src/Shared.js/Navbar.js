@@ -8,19 +8,19 @@ import useUserDetails from "../Hooks/useUserDetails";
 
 const Navbar = () => {
   const [user, loading, error] = useAuthState(auth);
-  const {
-    isLoading1,
-    error1,
-    data: users,
-    refetch1,
-  }=useUserDetails(user?.email)
+  // const {
+  //   isLoading1,
+  //   error1,
+  //   data: users,
+  //   refetch1,
+  // }=useUserDetails(user?.email)
   if (loading) {
     return <Loading></Loading>;
   }
  const handleSignOut=event=>{
    event.preventDefault()
    signOut(auth)
-   refetch1()
+  //  refetch1()
  }
   const title = (
     <>
@@ -49,7 +49,7 @@ const Navbar = () => {
       <span  className="whitespace-nowrap">{user.displayName}</span>
       </li>:''}
       <li>
-        <Link to="/home">Home</Link>
+        <Link to="/myportfolio">My Portfolio</Link>
       </li>
     </>
   );
