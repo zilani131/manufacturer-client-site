@@ -61,7 +61,7 @@ const MyOrder = () => {
           </tbody>
         </table>
       </div>
-      {cancel && <CancelModal  key={user._id}
+      {cancel && <CancelModal setCancel={setCancel} key={user._id}
                cancel={cancel} refetch={refetch}></CancelModal>}
     </div>
   );

@@ -26,7 +26,7 @@ const ManageOrders = () => {
           {/* <!-- head --> */}
           <thead>
             <tr>
-              <th></th>
+             
               <th>Customer Name</th>
               <th>Email</th>
               <th>Product Name</th>
@@ -35,14 +35,14 @@ const ManageOrders = () => {
             </tr>
           </thead>
           <tbody>
-            {orders.length && orders.map((order, index) => (
+            {orders.length && (orders.map((order, index) => (
               <ManageOrdersRow
                 key={order._id}
                 refetch={refetch}
                 index={index}
                 order={order}
               ></ManageOrdersRow>
-            ))}
+            ))).reverse()}
           </tbody>
         </table>
       </div>

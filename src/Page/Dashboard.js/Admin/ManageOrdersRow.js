@@ -1,7 +1,7 @@
 import React from 'react';
 
 const ManageOrdersRow = ({index,order,refetch}) => {
-    const {_id,prodcutName,name,email,status,}=order;
+    const {_id,productName,name,email,status,}=order;
     const handleShip=(event)=>{
         event.preventDefault();
         const newStatus={status:"shipped"}
@@ -24,10 +24,10 @@ const ManageOrdersRow = ({index,order,refetch}) => {
     }
     return (
         <tr>
-        <th>{index+1}</th>
+       
         <td>{name}</td>
         <td>{email}</td>
-        <td>{prodcutName}</td>
+        <td>{productName}</td>
         <td>{status}</td>
         <td><button disabled={status==="unpaid"} onClick={handleShip} className="btn btn-success">Shipping</button></td>
 

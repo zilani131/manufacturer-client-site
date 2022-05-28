@@ -60,9 +60,9 @@ const Profile = () => {
           </div>
           <div className="flex items-center my-1"><UserIcon className="h-6 mr-1"></UserIcon> <h2 className=" text-lg font-semibold ">  {user?.displayName}</h2></div>
           <div className="flex items-center my-1"><MailIcon className="h-6 mr-1"></MailIcon> <p className="text-lg font-semibold ">  {user?.email}</p></div>
-          <div className="flex items-center my-1"><PhoneIcon className="h-6 mr-1"></PhoneIcon> <p className="text-lg font-semibold ">Phone:{users?.phone}</p></div>
-          <div className="flex items-center my-1"><LinkIcon className="h-6 mr-1"></LinkIcon><p className="text-lg font-semibold ">Linkedin:{users?.linkedin}</p></div>
-          <div className="flex items-center my-1"><AcademicCapIcon className="h-6 mr-1"></AcademicCapIcon><p className="text-lg font-semibold ">Education:{users?.education}</p></div>
+          <div className="flex items-center my-1"><PhoneIcon className="h-6 mr-1"></PhoneIcon> <p className="text-lg font-semibold ">{users?.phone}</p></div>
+          <div className="flex items-center my-1"><LinkIcon className="h-6 mr-1"></LinkIcon><p className="text-lg font-semibold "><a href="https://www.linkedin.com/signup">{users?.linkedin}</a></p></div>
+          <div className="flex items-center my-1"><AcademicCapIcon className="h-6 mr-1"></AcademicCapIcon><p className="text-lg font-semibold ">{users?.education}</p></div>
         </div>
 
         <div className="card-body w-8/12">
